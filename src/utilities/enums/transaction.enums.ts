@@ -1,0 +1,4 @@
+export enum TRANSACTION_RESULT {
+  FAILED,
+  SUCCESS
+}

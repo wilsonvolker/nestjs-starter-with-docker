@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  nestjs-starter-with-docker:
+      environment:
+        - NODE_ENV=production
+        - PORT=3050
+        # db settings
+        - DB_HOST=host.docker.internal
+        - DB_DATABASE=binbowbrs-dev # aka db schema
+        - DB_PORT=48898
+        - DB_USERNAME=root
+        - DB_PASSWORD=
+      build:
+        context: .
+        dockerfile: Dockerfile
+      ports:
+        - 3050:3050 # container port:expose port
