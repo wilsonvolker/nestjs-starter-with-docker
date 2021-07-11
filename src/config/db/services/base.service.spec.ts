@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { BinbowBaseService, ICondition, IInsertMapping, IUpdateMapping } from "./binbow.base.service";
+import { BaseService, ICondition, IInsertMapping, IUpdateMapping } from "./base.service";
 import { AppModule } from "../../../app.module";
 import { StoryService } from "../../../story/services/story.service";
 import { QueryDeepPartialEntity } from "typeorm/query-builder/QueryPartialEntity";
@@ -7,16 +7,16 @@ import { Story } from "../entities/story.entity";
 import { TRANSACTION_RESULT } from "../../../utilities/enums/transaction.enums";
 
 describe('Binbow.BaseService', () => {
-  let service: BinbowBaseService;
+  let service: BaseService;
   const timeout = 9999999;
 
   beforeAll(async () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [AppModule],
-      providers: [BinbowBaseService],
+      providers: [BaseService],
     }).compile();
 
-    service = module.get<BinbowBaseService>(BinbowBaseService);
+    service = module.get<BaseService>(BaseService);
   }, timeout) // allow more time for the typeorm to sync the tables
 
   beforeEach(async () => {

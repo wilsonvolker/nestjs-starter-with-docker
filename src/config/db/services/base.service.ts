@@ -4,7 +4,7 @@ import { QueryDeepPartialEntity } from "typeorm/query-builder/QueryPartialEntity
 import { TRANSACTION_RESULT } from "../../../utilities/enums/transaction.enums";
 
 @Injectable()
-export class BinbowBaseService {
+export class BaseService {
   constructor() {}
 
   /* functions to interact with db */
