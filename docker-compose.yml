@@ -4,6 +4,7 @@ services:
   nestjs-starter-with-docker:
       environment:
         - NODE_ENV=production
+        - VERSION=0.0.0.docker
         - PORT=3050
         # db settings
         - DB_HOST=host.docker.internal
